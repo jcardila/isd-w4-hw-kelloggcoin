@@ -27,3 +27,18 @@ blockchain = [
 # Anthony's KelloggCoin balance is 2650
 
 # 👇👇👇 Your code HERE 👇👇👇
+
+users = ["ben","brian","evan","anthony"]
+
+for user in users
+  balance = 0
+  for trans in blockchain
+    if trans[:from_user] == user
+      balance = balance - trans[:amount]
+    end
+    if trans[:to_user] == user
+      balance = balance + trans[:amount]
+    end
+  end
+  puts "#{user}'s KelloggCoin balance is #{balance}"
+end
